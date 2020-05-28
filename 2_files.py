@@ -12,16 +12,19 @@
 """
 
 def file_analyzer(file):
+    """Анализируем полученный переданный в функцию файл и создаём результат с новым именем."""
 
     with open(file, 'r', encoding='utf-8') as f:
+
         content = f.read()
-        print (f'Результат анализа "{file}"')
-        print ('Длина строки - ' + str(len(content)))
-        print ('Количество слов - ' + str(len(content.split())))
+        content_str_len = len(content)
+        content_words_len = len(content.split())
+        result = f'Результат анализа "{file}."\nДлина строки - {content_str_len} символов.\nКоличество слов - {content_words_len}.'
 
-    with open(file[-5])    
-
-
+        new_file_name = str(file.split('.')[-2]) + '2.txt'
+        with open(new_file_name, 'w', encoding='utf-8') as f:
+            f.write(result)
+        
 def main():
 
     file_analyzer('referat.txt')
