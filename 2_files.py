@@ -11,12 +11,20 @@
 5. Сохраните результат в файл referat2.txt
 """
 
+def file_analyzer(file):
+
+    with open(file, 'r', encoding='utf-8') as f:
+        content = f.read()
+        print (f'Результат анализа "{file}"')
+        print ('Длина строки - ' + str(len(content)))
+        print ('Количество слов - ' + str(len(content.split())))
+
+    with open(file[-5])    
+
+
 def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
+
+    file_analyzer('referat.txt')
 
 if __name__ == "__main__":
     main()
